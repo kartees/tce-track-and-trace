@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>blog</title>
+  
+
+</head>
+
+<body>
+        <div class="jumbotron text-center" style="background:#336699">
+          <h1 style="color:white">TCE TRACK AND TRACE SYSTEM</h1>
+        </div>
+        <br><br>
+        <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">From date</th>
+              <th scope="col">To date</th>
+              <th scope="col">Signal Energy avg</th>
+              <th scope="col">Velocity X avg</th>
+              <th scope="col">Velocity Y avg</th>
+              <th scope="col">Velocity Z avg</th>
+              <th scope="col">Temperature avg</th>
+              <th scope="col">Noise avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for equipment in parameters %}
+            <tr>
+              <td>{{equipment.from_date}}</td>
+              <td>{{equipment.to_date}}</td>
+              <td>{{equipment.Signal_Energy_avg}}</td>
+              <td>{{equipment.Velocity_X_avg}}</td>
+              <td>{{equipment.Velocity_Y_avg}}</td>
+              <td>{{equipment.Velocity_Z_avg}}</td>
+              <td>{{equipment.Temperature_avg}}</td>
+              <td>{{equipment.Noise_avg}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+        
+</body>
+</html>
